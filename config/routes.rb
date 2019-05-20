@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
+  get 'campsites/new'
+  get 'campsites/create'
+  root to: 'pages#data'
   devise_for :users
   # resources :users, only: [:new, :create]
 
