@@ -1,0 +1,18 @@
+<h1>'Internal Data input form'</h1>
+<%= simple_form_for(@data) do |f| %>
+  <div class="form-inputs">
+
+    <%= f.input :name %>
+    <%= f.input :decription%>
+    <%= f.input :address %>
+    <%= f.input :price %>
+
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
