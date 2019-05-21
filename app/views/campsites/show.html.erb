@@ -1,51 +1,80 @@
 
 
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <a class="navbar-brand" href="#">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Messages</a>
-      </li>
-      <li class="nav-item dropdown">
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-        </div>
-      </li>
-    </ul>
+<div class="navbar border-bottom">
+  <div>
+    <%= link_to root_path do %>
+    <%= image_tag('logo-camping.png') %>
+    <% end %>
   </div>
+  <nav>
+    <a href="/campsites/new">list your campsite</a>
+    <a href="">sign up</a>
+    <a href="">sign in</a>
+  </nav>
 </div>
 
+<div class="campsite-details-container">
 
-
-<div class="container">
-  <h1><%= @campsite.name %></h1>
-
-  <div class="campsite-image"><%= cl_image_tag('c8rmqup6qciryibmprkb')%>
+  <div class="container-info">
+    <h1><%= @campsite.name %></h1>
+    <div>
+      <%= cl_image_tag(@campsite.photo, width: 1000, crop: :fill)%>
+    </div>
+    <div>
+      <div>
+        <p><strong>Address: </strong><%= @campsite.address %></p>
+        <p><strong>About this campsite: </strong><br><%= @campsite.description %></p>
+      </div>
+    </div>
   </div>
-</div>
 
-<div class="container d-flex">
-
-  <div class="campsite-info">
-    <p><%= @campsite.address %></p>
-    <p><%= @campsite.description %></p>
+  <div class="booking-form border">
+    <div class="row justify-content-center pt-3">
+      <div class="col-sm-10">
+        <h2 class="mb-4 text-align-center">Book this campsite</h2>
+        <form>
+          <div class="form-row">
+            <div class="col-sm-10 form-group">
+              <label>Location:</label>
+              <input type="text" class="form-control" placeholder="city">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-sm-10 form-group">
+              <label>Check in</label>
+              <input type="email" class="form-control" placeholder="date">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-sm-10 form-group">
+              <label>Check out</label>
+              <input type="text" class="form-control" placeholder="date">
+            </div>
+          </div>
+          <!-- drop down -->
+          <div class="form-row">
+            <div class="col-sm-10 form-group">
+              <label for="exampleFormControlSelect1">How many people?</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+          </div>
+          <br>
+          <div class="col-sm-10 form-group">
+            <p><strong>Price per night: 35 € </strong></p>
+            <p><strong>Total: 150 €</strong></p>
+          </div>
+          <div class="form-row">
+            <button type="button" class="btn btn-warning font-weight-bold col-sm-10 form-group p-3">book it</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
-  <div class= "form">
-    <p>Insert form</p>
-
 </div>
 
 
