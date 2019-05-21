@@ -15,6 +15,19 @@ class CampsitesController < ApplicationController
     redirect_to campsite_path(@campsite)
   end
 
+  def show
+    @campsite = Campsite.find(params[:id])
+    authorize @campsite
+  end
+
+  def index
+    if params[:name].present?
+      @campsites = policy_scope(Campsite.where(name: params[:name]))
+    else
+      @campsites = policy_scope(Campsite) #authorize the campsites
+    end
+  end
+
   private
 
   def set_campsite
