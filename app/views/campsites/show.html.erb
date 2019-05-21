@@ -3,73 +3,79 @@
 <div class="navbar border-bottom">
   <div>
     <%= link_to root_path do %>
-      <%= image_tag('logo-camping.png') %>
+    <%= image_tag('logo-camping.png') %>
     <% end %>
   </div>
   <nav>
-      <a href="/campsites/new">list your campsite</a>
-      <a href="">sign up</a>
-      <a href="">sign in</a>
+    <a href="/campsites/new">list your campsite</a>
+    <a href="">sign up</a>
+    <a href="">sign in</a>
   </nav>
 </div>
 
-<div class="container">
-  <h1><%= @campsite.name %></h1>
+<div class="campsite-details-container">
 
-  <div>
-    <%= cl_image_tag(@campsite.photo, width: 1000, crop: :fill)%>
-  </div>
-</div>
-
-<div class="container-info">
-
-  <div>
-    <p><%= @campsite.address %></p>
-    <p><%= @campsite.description %></p>
-  </div>
-
-  <div class="form">
-      <div class="row justify-content-center pt-3">
-        <div class="col-sm-10">
-          <h2 class="mb-4 text-align-center">Book this campsite</h2>
-          <form>
-            <div class="form-row">
-              <div class="col-sm-10 form-group">
-                <label>Where do you want to camp?</label>
-                <input type="text" class="form-control" placeholder="city">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col-sm-10 form-group">
-                <label>Check in</label>
-                <input type="email" class="form-control" placeholder="date">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col-sm-10 form-group">
-                <label>Check out</label>
-                <input type="text" class="form-control" placeholder="date">
-              </div>
-            </div>
-              <!-- drop down -->
-            <div class="form-row">
-              <div class="col-sm-10 form-group">
-                <label for="exampleFormControlSelect1">How many people?</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                  <option>1</option>
-                  <option>2</option>
-                  <option>3</option>
-                  <option>4</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-row">
-              <button type="button" class="btn btn-warning font-weight-bold col-sm-10 form-group p-3">book it</button>
-            </div>
-          </form>
-        </div>
+  <div class="container-info">
+    <h1><%= @campsite.name %></h1>
+    <div>
+      <%= cl_image_tag(@campsite.photo, width: 1000, crop: :fill)%>
+    </div>
+    <div>
+      <div>
+        <p><strong>Address: </strong><%= @campsite.address %></p>
+        <p><strong>About this campsite: </strong><br><%= @campsite.description %></p>
       </div>
     </div>
+  </div>
+
+  <div class="booking-form border">
+    <div class="row justify-content-center pt-3">
+      <div class="col-sm-10">
+        <h2 class="mb-4 text-align-center">Book this campsite</h2>
+        <form>
+          <div class="form-row">
+            <div class="col-sm-10 form-group">
+              <label>Location:</label>
+              <input type="text" class="form-control" placeholder="city">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-sm-10 form-group">
+              <label>Check in</label>
+              <input type="email" class="form-control" placeholder="date">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-sm-10 form-group">
+              <label>Check out</label>
+              <input type="text" class="form-control" placeholder="date">
+            </div>
+          </div>
+          <!-- drop down -->
+          <div class="form-row">
+            <div class="col-sm-10 form-group">
+              <label for="exampleFormControlSelect1">How many people?</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+          </div>
+          <br>
+          <div class="col-sm-10 form-group">
+            <p><strong>Price per night: 35 € </strong></p>
+            <p><strong>Total: 150 €</strong></p>
+          </div>
+          <div class="form-row">
+            <button type="button" class="btn btn-warning font-weight-bold col-sm-10 form-group p-3">book it</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

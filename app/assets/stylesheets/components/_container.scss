@@ -1,42 +1,39 @@
-.container{
-  border: 1px solid red;
-  margin: auto;
+.campsite-details-container {
+  background-color: #fcfcfc;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  margin: 30px auto;
+  padding: 40px;
   width: 1000px;
-}
-
-.container h1 {
-  font-size: 35px;
-  color: #4f4f4f;
-  margin-bottom: 15px;
-}
-
-.container img {
-  width: 80%;
-  border-radius: 5px;
-}
-
-.container-info p {
-  font-size: 20px;
-  color: #4f4f4f;
+  display: flex;
+  justify-content: space-around;
 }
 
 .container-info {
-  border: 1px solid red;
-  margin: 30px auto;
-  width: 1000px;
-  display: flex;
-  justify-content: space-between;
+  display: block;
 }
 
-.form {
-  width: 400px;
-  background-color: white;
-  border-radius: 5px;
-  padding: 15px;
-  color: #777576;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  top: 40px;
-  left: 50px;
+.container-info h1 {
+  font-size: 35px;
+  color: #294c1d;
+  font-weight: bold;
+  margin-bottom: 25px;
 }
+
+.container-info h3 {
+  font-size: 20px;
+  color: #E69930;
+  font-weight: bold;
+}
+
+.container-info img {
+  width: 80%;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.container-info p {
+  font-size: 18px;
+  color: #4f4f4f;
+}
+
