@@ -1,10 +1,29 @@
-<%= render "partials/search_form" %>
+<% render "partials/search_form" %>
+<div class="navbar border-bottom">
+  <div>
+    <%= link_to root_path do %>
+    <%= image_tag('logo-camping.png') %>
+    <% end %>
+  </div>
+  <nav>
+    <a href="/campsites/new">list your campsite</a>
+    <a href="">sign up</a>
+    <a href="">sign in</a>
+  </nav>
+</div>
 
-
-<h2>All Camping listings</h2>
-<ul>
-  <% @campsites.each do |campsite| %>
-  <li><%= campsite.name %></li>
-  <%= cl_image_tag(campsite.photo) %>
-  <% end %>
-</ul>
+<div class="main-container">
+  <div class="campsite-container">
+    <% @campsites.each do |campsite| %>
+    <div class="campsite-card ">
+      <%= cl_image_tag(campsite.photo) %>
+      <div class="campsite-card-infos">
+        <div>
+          <h2><%= campsite.name %></h2>
+        </div>
+        <h2 class="campsite-card-pricing">£99.99</h2>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
