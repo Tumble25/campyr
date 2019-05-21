@@ -12,6 +12,14 @@ class CampsitesController < ApplicationController
     @campsite.save # save the newly created campsite
   end
 
+  def index
+    if params[:name].present?
+      @campsites = policy_scope(Campsite.where(name: params[:name]))
+    else
+      @campsites = policy_scope(Campsite) #authorize the campsites
+    end
+  end
+
   private
 
   def set_campsite
