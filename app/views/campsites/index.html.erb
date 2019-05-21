@@ -1,0 +1,10 @@
+<%= render "partials/search_form" %>
+
+
+<h2>All Camping listings</h2>
+<ul>
+  <% @campsites.each do |campsite| %>
+  <li><%= campsite.name %></li>
+  <%= cl_image_tag(campsite.photo) %>
+  <% end %>
+</ul>
