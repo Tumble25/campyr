@@ -15,6 +15,11 @@ class CampsitesController < ApplicationController
     redirect_to campsite_path(@campsite)
   end
 
+  def show
+    @campsite = Campsite.find(params[:id])
+    authorize @campsite
+  end
+
   private
 
   def set_campsite
