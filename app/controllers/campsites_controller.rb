@@ -5,7 +5,6 @@ class CampsitesController < ApplicationController
   end
 
   def create
-    authorize @restaurant
     @user = current_user # find the current user (this is a devise spefic method)
     @campsite = Campsite.new(campsite_params) # create a new campsite
     @campsite.user = @user # attach the user instance to the new campsite instance
