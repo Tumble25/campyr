@@ -1,16 +1,42 @@
 .container{
-  width: 1000px;
   border: 1px solid red;
-
+  margin: auto;
+  width: 1000px;
 }
 
-.campsite-image {
-  position: relative;
-  left: -15px;
-
+.container h1 {
+  font-size: 35px;
+  color: #4f4f4f;
+  margin-bottom: 15px;
 }
 
-.container d-flex {
-  align-self: flex-end;
+.container img {
+  width: 80%;
+  border-radius: 5px;
+}
+
+.container-info p {
+  font-size: 20px;
+  color: #4f4f4f;
+}
+
+.container-info {
+  border: 1px solid red;
+  margin: 30px auto;
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form {
+  width: 400px;
+  background-color: white;
+  border-radius: 5px;
+  padding: 15px;
+  color: #777576;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  top: 40px;
+  left: 50px;
 }
