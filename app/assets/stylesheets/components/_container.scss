@@ -1,4 +1,4 @@
-.campsite-details-container {
+.main-container {
   background-color: #fcfcfc;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
   border-radius: 10px;
@@ -7,6 +7,10 @@
   width: 1000px;
   display: flex;
   justify-content: space-around;
+}
+
+.main-container img {
+  width: 20%
 }
 
 .container-info {
@@ -37,3 +41,9 @@
   color: #4f4f4f;
 }
 
+.campsite-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
