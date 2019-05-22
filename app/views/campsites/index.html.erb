@@ -7,8 +7,10 @@
   </div>
   <nav>
     <a href="/campsites/new">list your campsite</a>
-    <a href="">sign up</a>
-    <a href="">sign in</a>
+    <a data-toggle="modal" data-target="#ModalSignup" href="">sign up</a>
+      <%= render "partials/modal_signup"%>
+      <a data-toggle="modal" data-target="#ModalSignin" href="">sign in</a>
+      <%= render "partials/sign_in"%>
   </nav>
 </div>
 
@@ -22,7 +24,7 @@
         <div>
           <h2><%= campsite.name %></h2>
         </div>
-        <h2 class="campsite-card-pricing">£99.99</h2>
+        <h2 class="campsite-card-pricing"><%= campsite.price %>€</h2>
       </div>
     </div>
     <% end %>

@@ -32,47 +32,24 @@
     <div class="row justify-content-center pt-3">
       <div class="col-sm-10">
         <h2 class="mb-4 text-align-center">Book this campsite</h2>
-        <form>
-          <div class="form-row">
-            <div class="col-sm-10 form-group">
-              <label>Location:</label>
-              <input type="text" class="form-control" placeholder="city">
-            </div>
+        <%= simple_form_for([@campsite, @reservation]) do |f| %>
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <div class="form-inputs">
+
+    <%= f.input :arrival%>
+    <%= f.input :departure%>
+
+  </div>
+      <div class="col-sm-10 form-group">
+            <p><strong>Price per night: <%= @campsite.price %>€</strong></p>
+            <p><strong>Total: 150€</strong></p>
           </div>
-          <div class="form-row">
-            <div class="col-sm-10 form-group">
-              <label>Check in</label>
-              <input type="email" class="form-control" placeholder="date">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="col-sm-10 form-group">
-              <label>Check out</label>
-              <input type="text" class="form-control" placeholder="date">
-            </div>
-          </div>
-          <!-- drop down -->
-          <div class="form-row">
-            <div class="col-sm-10 form-group">
-              <label for="exampleFormControlSelect1">How many people?</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
-            </div>
-          </div>
-          <br>
-          <div class="col-sm-10 form-group">
-            <p><strong>Price per night: 35 € </strong></p>
-            <p><strong>Total: 150 €</strong></p>
-          </div>
-          <div class="form-row">
-            <button type="button" class="btn btn-warning font-weight-bold col-sm-10 form-group p-3">book it</button>
-          </div>
-        </form>
       </div>
+
+  <div class=" text-white form-actions">
+    <%= f.button :submit , class: "btn btn-warning"%>
+  </div>
+<% end %>
     </div>
   </div>
 </div>
