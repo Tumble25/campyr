@@ -12,6 +12,4 @@ def create
     # @campsite.save # save the newly created campsite
     # redirect_to campsite_path(@campsite)
   end
-
-
 end

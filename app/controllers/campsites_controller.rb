@@ -1,5 +1,6 @@
 class CampsitesController < ApplicationController
   before_action :set_campsite, only: [:show, :edit, :update]
+  skip_before_action :authenticate_user!, only: :index
 
   def new
     @campsite = Campsite.new

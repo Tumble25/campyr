@@ -6,8 +6,10 @@
   </div>
   <nav>
       <a href="/campsites/new">list your campsite</a>
-      <a href="">sign up</a>
-      <a href="">sign in</a>
+      <a data-toggle="modal" data-target="#ModalSignup" href="">sign up</a>
+      <%= render "partials/modal_signup"%>
+      <a data-toggle="modal" data-target="#ModalSignup" href="">sign in</a>
+      <%= render "partials/modal_signup"%>
   </nav>
 </div>
 
