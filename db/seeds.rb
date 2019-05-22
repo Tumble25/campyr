@@ -17,7 +17,7 @@ user3 = User.create!(first_name: "Annie", last_name: "van Beusekom", email: "ann
 user4 = User.create!(first_name: "Max", last_name: "S.", email: "max@maxxy.com", password: "111111", password_confirmation: "111111")
 
 puts "Creating campsites..."
-campsite1 = Campsite.create!(name: "Camping 'De Pample'", description: "Family friendly campsite", address: "2 admiralenweg, hoenderloo", photo: Rails.root.join("app/assets/images/camping.jpg").open, price: "23", user: user2)
+campsite1 = Campsite.create!(name: "Camping 'De Pample'", description: "Family friendly campsite", address: "2 Admiralenweg, Hoenderloo", photo: Rails.root.join("app/assets/images/camping.jpg").open, price: "23", user: user2)
 campsite2 = Campsite.create!(name: "Camping 'De Wasbeek'", description: "Beautiful campsite and beautiful surroundings.", address: "Wasbeeklaan 5 b, Warmond", photo: Rails.root.join("app/assets/images/camping2.jpg").open, price: "27", user: user2)
 campsite3 = Campsite.create!(name: "Camping La Pelouse", description: "Peaceful wooded site on the banks of the Dordogne river", address: "8 bis Rue Jean Jacques Rousseau, 24100 Bergerac, France", photo: Rails.root.join("app/assets/images/camping3.jpg").open, price: "13", user: user2)
 Campsite.create!(name: "Camping Pomport Beach ", description: "A 4-star campsite ideally located 10 min. of Bergerac", address: "Route de la Gardonnette, 24240 Bergerac, France", photo: Rails.root.join("app/assets/images/camping4.jpg").open, price: "33", user: user2)
