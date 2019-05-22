@@ -15,6 +15,7 @@ class CampsitesController < ApplicationController
     @campsite.user = @user # attach the user instance to the new campsite instance
     @campsite.save # save the newly created campsite
     redirect_to campsite_path(@campsite)
+    flash[:notice] = "Your campsite '#{@campsite.name}' has been saved!"
   end
 
   def show
