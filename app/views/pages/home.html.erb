@@ -8,8 +8,8 @@
       <a href="/campsites/new">list your campsite</a>
       <a data-toggle="modal" data-target="#ModalSignup" href="">sign up</a>
       <%= render "partials/modal_signup"%>
-      <a data-toggle="modal" data-target="#ModalSignup" href="">sign in</a>
-      <%= render "partials/modal_signup"%>
+      <a data-toggle="modal" data-target="#ModalSignin" href="">sign in</a>
+      <%= render "partials/sign_in"%>
   </nav>
 </div>
 
@@ -51,7 +51,7 @@
               </div>
             </div>
             <div class="form-row">
-              <button type="button" class="btn btn-warning font-weight-bold col-sm-10 form-group p-3">search campsites</button>
+              <%=link_to "search campsites", campsites_path, class:"btn btn-warning font-weight-bold col-sm-10 form-group p-3"%>
             </div>
           </form>
         </div>
