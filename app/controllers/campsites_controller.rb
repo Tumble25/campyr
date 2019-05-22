@@ -18,6 +18,7 @@ class CampsitesController < ApplicationController
   end
 
   def show
+    @reservation = Reservation.new
     @campsite = Campsite.find(params[:id])
     authorize @campsite
   end
