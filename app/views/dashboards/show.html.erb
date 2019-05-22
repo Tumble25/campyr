@@ -1,0 +1,69 @@
+<!-- nav bar -->
+<div class="navbar border-bottom">
+  <div>
+    <%= link_to root_path do %>
+    <%= image_tag('logo-camping.png') %>
+    <% end %>
+  </div>
+  <nav>
+    <a href="/campsites/new" class="btn btn-warning">add a new campsite</a>
+  </nav>
+</div>
+
+<!-- New reservations -->
+<div class="dashboard-container">
+  <h3 class="text-warning">Hello, Bob!</h3>&nbsp &nbsp &nbsp
+  <h4>New reservations</h4>
+  <div class="grid-container">
+    <div class="card-review-reservation">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+      <div class="card-review-reservation-infos p-3">
+        <h2><strong>Campsite name</strong></h2>
+        <p>Client name</p>
+        <div class="row pl-3">
+          <p>Arrival:</p>&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp <p>Departure:</p>
+        </div>
+        <p>Status of reservation: </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Your campsites -->
+<div class="dashboard-container">
+  <h4 class="m-3">Your campsites</h4>
+  <div class="grid-container">
+    <div class="campsite-container">
+      <!-- each  -->
+      <div class="campsite-card ">
+        <!-- cl_image_tag(campsite.photo)  -->
+        <img src="https://images.unsplash.com/photo-1492648272180-61e45a8d98a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
+        <div class="campsite-card-infos d-flex justify-content-center">
+          <div>
+            <h2>Campsite name</h2>
+          </div>
+        </div>
+      </div>
+      <!-- end of each -->
+    </div>
+  </div>
+</div>
+
+<!-- Your trips -->
+<div class="dashboard-container">
+  <h4>Your next trips</h4>
+  <div class="grid-container">
+    <div class="card-review-reservation">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+      <div class="card-review-reservation-infos p-3">
+        <h2><strong>Campsite name</strong></h2>
+        <p>Client name</p>
+        <div class="row pl-3">
+          <p>Arrival:</p>&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp <p>Departure:</p>
+        </div>
+        <p>Status of reservation: </p>
+      </div>
+    </div>
+  </div>
+</div>

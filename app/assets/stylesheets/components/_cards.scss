@@ -1,0 +1,60 @@
+.campsite-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  margin: 16px;
+}
+
+.campsite-card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.campsite-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.campsite-card .campsite-card-infos {
+  padding: 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  color: #4f4f4f;
+}
+
+
+// review reservations cards on dashboards
+.card-review-reservation {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+
+}
+
+.card-review-reservation img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-review-reservation h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-review-reservation p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
