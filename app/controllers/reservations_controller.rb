@@ -18,7 +18,7 @@ class ReservationsController < ApplicationController
     @reservation.user = @user # attach the user instance to the new campsite instance
     # @total price
     @reservation.save # save the newly created campsite
-    redirect_to campsite_path(@campsite)
+    redirect_to dashboard_path(@user)
   end
 
   def set_reservation
