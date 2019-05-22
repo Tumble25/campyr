@@ -12,9 +12,11 @@
   </nav>
 </div>
 
+
 <div class="main-container">
   <div class="campsite-container">
     <% @campsites.each do |campsite| %>
+    <%= link_to(campsite_path(campsite)) do %>
     <div class="campsite-card ">
       <%= cl_image_tag(campsite.photo) %>
       <div class="campsite-card-infos">
@@ -25,5 +27,8 @@
       </div>
     </div>
     <% end %>
+    <% end %>
   </div>
 </div>
+
+
