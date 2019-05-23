@@ -1,0 +1,19 @@
+<div class="dashboard-container">
+  <h4 class="m-3">My campsites</h4>
+  <div class="grid-container">
+
+      <!-- each  -->
+    <% campsites.each do |campsites| %>
+      <div class="campsite-card ">
+         <img src=<%= cl_image_path campsites.photo%>>
+        <div class="campsite-card-infos d-flex justify-content-center">
+          <div>
+            <h2><%= campsites.name %></h2>
+          </div>
+        </div>
+      </div>
+         <% end %>
+      <!-- end of each -->
+
+  </div>
+</div>
