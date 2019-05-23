@@ -4,7 +4,7 @@
   border-radius: 10px;
   margin: 50px auto;
   padding: 25px;
-  width: 1000px;
+  width: 1250px;
   display: flex;
   justify-content: space-around;
 }
@@ -44,7 +44,7 @@
 
 .campsite-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   flex-grow: 1;
   flex-wrap: wrap;
 }
@@ -72,3 +72,4 @@
 .listing-container {
   width: 500px;
 }
+

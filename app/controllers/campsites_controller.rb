@@ -14,7 +14,8 @@ class CampsitesController < ApplicationController
     authorize @campsite # authorize if campsite can be created by user
     @campsite.user = @user # attach the user instance to the new campsite instance
     @campsite.save # save the newly created campsite
-    redirect_to campsite_path(@campsite)
+    redirect_to dashboard_path
+    flash[:notice] = "Your campsite '#{@campsite.name}' has been saved!"
   end
 
   def show

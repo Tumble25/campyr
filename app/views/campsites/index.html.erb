@@ -5,12 +5,24 @@
     <%= image_tag('logo-camping.png') %>
     <% end %>
   </div>
-  <nav>
-    <a href="/campsites/new">list your campsite</a>
-    <a data-toggle="modal" data-target="#ModalSignup" href="">sign up</a>
-      <%= render "partials/modal_signup"%>
-      <a data-toggle="modal" data-target="#ModalSignin" href="">sign in</a>
+  <nav class="d-flex">
+    <a href="/campsites/new">List your campsite</a>
+      <% if user_signed_in? %>
+   <div class="nav-item active">
+     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navlink"  %>
+     <%= link_to "Dashboard", dashboard_path(@user), class: "navlink"  %>
+   </div>
+        <% else %>
+    <div class="nav-item active d-flex">
+      <a data-toggle="modal" data-target="#ModalSignin" href="">Sign in</a>
       <%= render "partials/sign_in"%>
+    </div>
+    <div class="nav-item active">
+      <a data-toggle="modal" data-target="#ModalSignup" href="">Sign up</a>
+      <%= render "partials/modal_signup"%>
+    </div>
+        <% end %>
+
   </nav>
 </div>
 
@@ -24,7 +36,7 @@
         <div>
           <h2><%= campsite.name %></h2>
         </div>
-        <h2 class="campsite-card-pricing"><%= campsite.price %>€</h2>
+        <h2 class="campsite-card-pricing">€<%= campsite.price %> p/n</h2>
       </div>
     </div>
     <% end %>

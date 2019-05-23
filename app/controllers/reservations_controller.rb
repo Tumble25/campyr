@@ -1,7 +1,7 @@
 class ReservationsController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [:index, :show]
-  # before_action :set_reservation, only: [:show, :edit, :update]
-  # skip_before_action :authenticate_user!, only: :index
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_reservation, only: [:show, :edit, :update]
+  skip_before_action :authenticate_user!, only: :index
 
   def new
     @reservation = Reservation.new
@@ -18,7 +18,8 @@ class ReservationsController < ApplicationController
     @reservation.user = @user # attach the user instance to the new campsite instance
     # @total price
     @reservation.save # save the newly created campsite
-    redirect_to dashboard_path(@user)
+    redirect_to dashboard_path
+    flash[:notice] = "Your reservation for '#{@campsite.name}' has been saved!"
   end
 
   def set_reservation

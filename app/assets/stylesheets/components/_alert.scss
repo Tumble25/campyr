@@ -1,6 +1,9 @@
 .alert {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 1000;
+  top: 0px;
+  left: 0;
+  right: 0;
+  height: 44px;
+  z-index: 7000;
+  opacity: 0.85;
 }
