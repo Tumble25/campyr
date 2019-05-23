@@ -1,4 +1,5 @@
 <% render "partials/search_form" %>
+<!-- nav bar -->
 <div class="navbar border-bottom">
   <div>
     <%= link_to root_path do %>
@@ -7,25 +8,43 @@
   </div>
   <nav class="d-flex">
     <a href="/campsites/new">List your campsite</a>
-      <% if user_signed_in? %>
-   <div class="nav-item active">
-     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navlink"  %>
-     <%= link_to "Dashboard", dashboard_path(@user), class: "navlink"  %>
-   </div>
-        <% else %>
-    <div class="nav-item active d-flex">
-      <a data-toggle="modal" data-target="#ModalSignin" href="">Sign in</a>
-      <%= render "partials/sign_in"%>
-    </div>
+    <% if user_signed_in? %>
     <div class="nav-item active">
-      <a data-toggle="modal" data-target="#ModalSignup" href="">Sign up</a>
-      <%= render "partials/modal_signup"%>
-    </div>
-        <% end %>
-
-  </nav>
+     <%= link_to "Dashboard", dashboard_path(@user), class: "navlink"  %>
+     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navlink"  %>
+   </div>
+   <% else %>
+   <div class="nav-item active d-flex">
+    <a data-toggle="modal" data-target="#ModalSignin" href="">Sign in</a>
+    <%= render "partials/sign_in"%>
+  </div>
+  <div class="nav-item active">
+    <a data-toggle="modal" data-target="#ModalSignup" href="">Sign up</a>
+    <%= render "partials/modal_signup"%>
+  </div>
+  <% end %>
+</nav>
 </div>
 
+<!-- search bar  -->
+<div class="search-bar-container">
+  <input type="text" class="form-item form-control" placeholder="Place">
+  <input type="date" class="form-item form-control" placeholder="check in">
+  <input type="date" class="form-item form-control" placeholder="check out">
+  <select class="form-item form-control">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+  </select>
+  <%=link_to "search", campsites_path, :class => "btn btn-warning font-weight-bold"%>
+</div>
+
+<!-- search results -->
 <div class="main-container">
   <div class="campsite-container">
     <% @campsites.each do |campsite| %>
@@ -36,7 +55,7 @@
         <div>
           <h2><%= campsite.name %></h2>
         </div>
-        <h2 class="campsite-card-pricing">€<%= campsite.price %> p/n</h2>
+        <h2 class="campsite-card-pricing">€<%= campsite.price %></h2>
       </div>
     </div>
     <% end %>
