@@ -1,8 +1,6 @@
-<h2>Test partial search</h2>
-<%= form_tag campsites_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Name"
+<%= simple_form_for :query, method: :get, url: campsites_path do |f| %>
+<%= f.input :city,
+class: "form-control",
+  placeholder: "City"
   %>
-<% end %>
+  <% end %>
