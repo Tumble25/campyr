@@ -1,0 +1,15 @@
+<nav class="navbar">
+    <div class="logo-header">
+    <%= link_to root_path do %>
+    <%= image_tag('logo-camping.png') %>
+    <% end %>
+    <h1 class="text-align-left">Campyr</h1>
+</div>
+<div class="d-flex">
+
+   <div class="nav-item active">
+     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navlink"  %>
+     <%= link_to "Dashboard", dashboard_path(@user), class: "navlink"  %>
+   </div>
+
+  </nav>
