@@ -27,40 +27,66 @@
 
 <!-- search bar  -->
 <div class="search-bar-container">
-  <input type="text" class="form-item form-control" placeholder="Place">
-  <input type="date" class="form-item form-control" placeholder="check in">
-  <input type="date" class="form-item form-control" placeholder="check out">
-  <select class="form-item form-control">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
-    <option>5</option>
-    <option>6</option>
-    <option>7</option>
-    <option>8</option>
-  </select>
-  <%=link_to "search", campsites_path, :class => "btn btn-warning font-weight-bold"%>
-</div>
-
-<!-- search results -->
-
-<div class="main-container">
-  <div class="campsite-container">
-    <% @campsites.each do |campsite| %>
-    <%= link_to(campsite_path(campsite)) do %>
-    <div class="campsite-card ">
-      <%= cl_image_tag(campsite.photo) %>
-      <div class="campsite-card-infos">
-        <div>
-          <h2><%= campsite.name %></h2>
-        </div>
-        <h2 class="campsite-card-pricing">€<%= campsite.price %></h2>
+  <div>
+    <%= simple_form_for :query, method: :get, url: campsites_path do |f| %>
+    <%= f.input :city,
+    class: "form-item form-control",
+      placeholder: "Place",
+      label: false
+      %>
+    </div>
+    <!--  <input type="text" class="form-item form-control" placeholder="Place"> -->
+    <div>
+      <div class="form-group string required query_city">
+        <input type="date" class="form-item form-control" placeholder="check in">
+      </div>
+    </div>
+    <div>
+      <div class="form-group string required query_city">
+        <input type="date" class="form-item form-control" placeholder="check out">
+      </div>
+    </div>
+    <div>
+      <div class="form-group string required query_city">
+        <select class="form-item form-control">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+        </select>
+    </div>
+  </div>
+    <div>
+      <div class="form-group string required query_city">
+        <%= f.button :submit, "search", :class => "btn btn-warning font-weight-bold form-item button-index-search" %>
+        <%#link_to "search", campsites_path, :class=> "btn btn-warning font-weight-bold form-item button-index-search"%>
       </div>
     </div>
     <% end %>
-    <% end %>
   </div>
-</div>
+
+  <!-- search results -->
+
+  <div class="main-container">
+    <div class="campsite-container">
+      <% @campsites.each do |campsite| %>
+      <%= link_to(campsite_path(campsite)) do %>
+      <div class="campsite-card ">
+        <%= cl_image_tag(campsite.photo) %>
+        <div class="campsite-card-infos">
+          <div>
+            <h2><%= campsite.name %></h2>
+          </div>
+          <h2 class="campsite-card-pricing">€<%= campsite.price %></h2>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
 
 
