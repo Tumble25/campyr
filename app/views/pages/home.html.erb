@@ -1,3 +1,4 @@
+<!-- nav bar -->
 <div class="navbar border-bottom">
   <div>
     <%= link_to root_path do %>
@@ -10,6 +11,7 @@
   </div>
 </div>
 
+<!-- banner  -->
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('<%= image_path 'background.jpg' %>');">
 
   <div class="search-form">
@@ -18,13 +20,13 @@
         <h2 class="mb-4 text-align-center">Search your next trip</h2>
         <!-- <form> -->
           <div class="form-row">
-            <div class="col-sm-10 form-group">
+            <div class="col-sm-10">
               <label>Where do you want to camp?</label>
 
 
               <!-- simple-form -->
               <%= simple_form_for :query, method: :get, url: campsites_path do |f| %>
-              <%= f.input :city,
+              <%= f.input :city, label: false,
               class: "form-control",
                 placeholder: "City"
                 %>
@@ -54,8 +56,8 @@
                 </select>
               </div>
             </div>
-            <div>
-              <%= f.button :submit, :class => "btn btn-warning font-weight-bold col-sm-10 form-group p-3"  %>
+            <div class="form-row">
+              <%= f.button :submit, 'search campsites', :class => "btn btn-warning font-weight-bold col-sm-10 form-group p-3"  %>
               <% end %>
             </div>
             <!-- </form> -->
@@ -64,6 +66,7 @@
       </div>
     </div>
 
+  <!-- footer  -->
     <div class="footer">
       <!-- <p>Follow us</p> -->
       <div class="footer-links">
