@@ -1,8 +1,9 @@
 .campsite-card {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  box-shadow: 0 0 3px rgba(0,0,0,0.1);
   margin: 16px;
+  border-radius: 3px;
 }
 
 .campsite-card > img {
@@ -13,7 +14,7 @@
 
 .campsite-card h2 {
   font-size: 14px;
-  font-weight: bold;
+  font-weight: semi-bold;
   margin: 0;
 }
 
