@@ -1,5 +1,13 @@
 <nav class="d-flex">
+  <% if user_signed_in? %>
     <a href="/campsites/new">List your campsite</a>
+      <% else %>
+      <div class="nav-item active d-flex">
+      <a data-toggle="modal" data-target="#ModalSignin" href="">List your campsite</a>
+      <%= render "partials/sign_in"%>
+    </div>
+    <% end %>
+
       <% if user_signed_in? %>
    <div class="nav-item active">
      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navlink"  %>
