@@ -1,11 +1,11 @@
 <div class="navbar border-bottom">
   <div>
     <%= link_to root_path do %>
-      <%= image_tag('logo-camping.png') %>
+    <%= image_tag('logo-camping.png') %>
     <% end %>
   </div>
   <div>
-<%= render "partials/navbar"%>
+    <%= render "partials/navbar"%>
 
   </div>
 </div>
@@ -13,14 +13,21 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('<%= image_path 'background.jpg' %>');">
 
   <div class="search-form">
-      <div class="row justify-content-center pt-3">
-        <div class="col-sm-10">
-          <h2 class="mb-4 text-align-center">Search your next trip</h2>
-          <form>
-            <div class="form-row">
-              <div class="col-sm-10 form-group">
-                <label>Where do you want to camp?</label>
-                <input type="text" class="form-control" placeholder="city">
+    <div class="row justify-content-center pt-3">
+      <div class="col-sm-10">
+        <h2 class="mb-4 text-align-center">Search your next trip</h2>
+        <!-- <form> -->
+          <div class="form-row">
+            <div class="col-sm-10 form-group">
+              <label>Where do you want to camp?</label>
+
+
+              <!-- simple-form -->
+              <%= simple_form_for :query, method: :get, url: campsites_path do |f| %>
+              <%= f.input :city,
+              class: "form-control",
+                placeholder: "City"
+                %>
               </div>
             </div>
             <div class="form-row">
@@ -35,7 +42,7 @@
                 <input type="date" class="form-control" placeholder="date">
               </div>
             </div>
-              <!-- drop down -->
+            <!-- drop down -->
             <div class="form-row">
               <div class="col-sm-10 form-group">
                 <label for="exampleFormControlSelect1">How many people?</label>
@@ -48,20 +55,21 @@
               </div>
             </div>
             <div>
-              <%=link_to "search campsites", campsites_path, :class => "btn btn-warning font-weight-bold col-sm-10 form-group p-3"%>
+              <%= f.button :submit, :class => "btn btn-warning font-weight-bold col-sm-10 form-group p-3"  %>
+              <% end %>
             </div>
-          </form>
+            <!-- </form> -->
+          </div>
         </div>
       </div>
     </div>
-</div>
 
-<div class="footer">
-  <!-- <p>Follow us</p> -->
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-  </div>
-</div>
+    <div class="footer">
+      <!-- <p>Follow us</p> -->
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
 

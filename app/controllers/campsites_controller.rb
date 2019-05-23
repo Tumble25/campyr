@@ -25,12 +25,12 @@ class CampsitesController < ApplicationController
   end
 
   def index
-    if params[:query].present?
+    if params[:query] && params[:query][:city].present?
       sql_query = " \
         campsites.name @@ :query \
         OR campsites.address @@ :query \
       "
-      @campsites = policy_scope(Campsite.where(sql_query, query: "%#{params[:query]}%"))
+      @campsites = policy_scope(Campsite.where(sql_query, query: "%#{params[:query][:city]}%"))
     else
       @campsites = policy_scope(Campsite) #authorize the campsites
     end
