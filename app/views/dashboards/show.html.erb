@@ -3,8 +3,9 @@
 
 
 <!-- New reservations -->
+<% unless @newres.empty? %>
 <%= render "partials/new_reservations"%>
-
+<% end  %>
 <!-- Your campsites -->
 <% unless @campsite.empty? %>
 <%= render "partials/my_campsites", campsites: @campsite%>
@@ -13,4 +14,4 @@
 <!-- Your trips -->
 
 <%= render "partials/my_trips"%>
-<%= render "partials/sign_in"%>
+

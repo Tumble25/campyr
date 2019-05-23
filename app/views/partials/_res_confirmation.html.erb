@@ -1,0 +1,36 @@
+<div class="modal fade" id="reservation-modal-<%= reservation.id %>" tabindex="-1" role="dialog" aria-labelledby="testlabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title" id="myModalLabel"></h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="container">
+          <div class="card-review-reservation-infos p-3">
+
+          <h2><strong><%=reservation.campsite.name %></strong></h2>
+          <p><strong>Client name</strong></p>
+          <p><%= reservation.user.first_name %> <%= User.find(reservation.user_id).last_name %></p>
+
+          <div class="row pl-3">
+            <p>Arrival: <%= reservation.arrival %></p>&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp
+            <p>Departure: <%= reservation.departure %></p>
+          </div>
+
+          <p>Status of reservation: <%= reservation.status %></p>
+        </div>
+
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="btn btn-warning form-actions">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
