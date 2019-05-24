@@ -4,6 +4,7 @@
 
       <!-- each  -->
     <% campsites.each do |campsites| %>
+    <%= link_to(campsite_path(campsites)) do %>
       <div class="campsite-card ">
          <img src=<%= cl_image_path campsites.photo%>>
         <div class="campsite-card-infos d-flex justify-content-center">
@@ -12,6 +13,7 @@
           </div>
         </div>
       </div>
+         <% end %>
          <% end %>
       <!-- end of each -->
 
