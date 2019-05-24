@@ -1,16 +1,3 @@
-<%= render "partials/navbar"%>
-
-<!-- details of campsite and search form-->
- <% if @campsite.user == current_user %>
-  <%= render "partials/show_campsite_owner" %>
-<% else %>
-  <%= render "partials/show_campsite_camper" %>
-
-<% end %>
-
-
-
-
 <div class="footer">
   <!-- <p>Follow us</p> -->
   <div class="footer-links">
