@@ -28,8 +28,8 @@ Campsite.create!(name: "Camping Costa Bravas", description: "The oldest in Catal
 Campsite.create!(name: "Camping Cantolagua", description: "Family friendly campsite", address: "Paseo Cantolagua, 1, 31400 Sangüesa, Navarra, Spain", photo: Rails.root.join("app/assets/images/camping1.jpg").open, price: "21", user: user4)
 
 # recently added
-Campsite.create!(name: "Vakantiepark Bonte Vlucht", description: "Family-friendly site near Doorn in the Utrechtse Heuvelrug forest. Half an hour's drive from the canal-crossed city of Utrecht. Sports facilities, swimming pool, restaurant and summer kids' club.", address: "CampStraat, 25, Doorn, Utrecht, The Netherlands", photo: Rails.root.join("app/assets/images/camping9.jpg").open, price: "51", user: user4)
-
+Campsite.create!(name: "Vakantiepark Bonte Vlucht", description: "Family-friendly site near Doorn in the Utrechtse Heuvelrug forest.", address: "CampStraat, 25, Doorn, Utrecht, The Netherlands", photo: Rails.root.join("app/assets/images/camping9.jpg").open, price: "51", user: user4)
+Campsite.create!(name: "Camping Le Wagon ", description: "A 5-star coding campsite 10 min. from Notre Dam", address: "Rue We didn't Start the Fire, 1337 Paris, France", photo: Rails.root.join("app/assets/images/camping14.jpg").open, price: "33", user: user2)
 Campsite.create!(name: "Campsite Waldbad", description: "Camping with German quality", address: "Zum Hohen Hagen 896 51069, Colone, Germany", photo: Rails.root.join("app/assets/images/camping14.jpg").open, price: "19", user: user3)
 Campsite.create!(name: "Campsite Am Hohen Hagen", description: "Camping with German quality", address: "Zum Hohen Hagen 12, 37127 Dransfeld, Germany", photo: Rails.root.join("app/assets/images/camping15.jpg").open, price: "23", user: user3)
 
