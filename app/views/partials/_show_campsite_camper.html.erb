@@ -1,0 +1,51 @@
+<!-- infos about the campsite -->
+<div class="main-container">
+
+  <div class="container-info">
+    <h1><%= @campsite.name %></h1>
+    <div>
+      <%= cl_image_tag(@campsite.photo, width: 1000, crop: :fill)%>
+    </div>
+    <div>
+      <div>
+        <p><strong>Address: </strong><%= @campsite.address %></p>
+        <p><strong>About this campsite: </strong><br><%= @campsite.description %></p>
+      </div>
+    </div>
+  </div>
+
+<!-- booking form -->
+  <div class="booking-form border">
+      <div class="row justify-content-center pt-3">
+        <div class="col-sm-10">
+          <h2 class="mb-4 text-align-center">Book this campsite</h2>
+          <%= simple_form_for([@campsite, @reservation]) do |f| %>
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <div class="form-inputs">
+
+            <%= f.input :arrival%>
+            <%= f.input :departure%>
+
+          </div>
+          <div class="col-sm-10 form-group">
+            <p><strong>Price per night: <%= @campsite.price %>€</strong></p>
+            <p><strong>Total: 150€</strong></p>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row justify-content-center pt-3">
+            <div class="col-sm-10">
+              <div class="font-weight-bold p-3">
+                <a href="/campsites" class="btn btn-secondary mr-3">Back to Results</a>
+
+                <%= f.button :submit , class: "btn btn-warning"%>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

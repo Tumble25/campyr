@@ -1,0 +1,16 @@
+<!-- infos about the campsite -->
+<div class="main-container">
+
+  <div class="container-info-owner">
+    <h1><%= @campsite.name %></h1>
+    <div>
+      <%= cl_image_tag(@campsite.photo, width: 1000, crop: :fill)%>
+    </div>
+    <div>
+      <div class="white-box border">
+        <p class="pt-2"><strong>Address: </strong><%= @campsite.address %></p>
+        <p class="pb-2"><strong>About this campsite: </strong><br><%= @campsite.description %></p>
+      </div>
+    </div>
+  </div>
+</div>
