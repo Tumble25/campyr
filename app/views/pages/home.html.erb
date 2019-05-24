@@ -1,17 +1,8 @@
 <!-- nav bar -->
-<div class="navbar border-bottom">
-  <div>
-    <%= link_to root_path do %>
-    <%= image_tag('logo-camping.png') %>
-    <% end %>
-  </div>
-  <!-- <div class="header-logo">
-    <h1 class="text-align-left">Campyr</h1>
-  </div> -->
-  <div>
-    <%= render "partials/navbar"%>
-  </div>
-</div>
+
+
+<%= render "partials/navbar"%>
+
 
 <!-- banner  -->
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('<%= image_path 'background.jpg' %>');">
