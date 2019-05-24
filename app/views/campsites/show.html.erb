@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <div class="booking-form border">
+  <div id="totalprice"class="booking-form border">
     <% if @campsite.user == current_user %>
     <div class="row justify-content-center pt-3">
       <div class="col-sm-10">
@@ -36,8 +36,8 @@
 
           </div>
           <div class="col-sm-10 form-group">
-            <p><strong>Price per night: <%= @campsite.price %>€</strong></p>
-            <p><strong>Total: 150€</strong></p>
+            <p><strong>Price per night: €<strong id="dayprice"><%= @campsite.price %></strong></strong></p>
+            <p id= "price"><strong>Total: €<%=@campsite.price %></strong></p>
           </div>
         </div>
 
