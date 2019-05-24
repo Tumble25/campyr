@@ -1,37 +1,26 @@
-<div class="navbar border-bottom">
-  <div>
-    <%= link_to root_path do %>
-    <%= image_tag('logo-camping.png') %>
-    <% end %>
-  </div>
-  <div class="header-logo">
-    <h1 class="text-align-left">Campyr</h1>
-  </div>
+<!-- nav bar -->
   <div>
     <%= render "partials/navbar"%>
   </div>
+
+
+<!-- form -->
+<div class="container pt-3">
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs m-4">
+   <%= f.input :email, required: true, autofocus: true %>
+   <%= f.input :password, required: true %>
+
+ </div>
+  <%= render "devise/shared/links" %>
 </div>
 
-        <div class="container pt-3">
-          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <%= f.error_notification %>
-          <div class="form-inputs">
-           <%= f.input :email, required: true, autofocus: true %>
-           <%= f.input :password, required: true %>
-         </div>
-      <div class="form-row justify-left">
-        <%= render "devise/shared/links" %>
-
-      </div>
-
-       </div>
-     </div>
-     <div class="modal-footer">
-      <div class= "container">
-      <div class="btn btn-warning form-actions">
-        <%= f.button :submit, "Sign in", class: "btn btn-warning" %>
-      </div>
-      <% end %>
-      </div>
-
+<div class="modal-footer">
+  <div class= "container">
+    <div class="btn btn-warning form-actions m-4">
+      <%= f.button :submit, "Sign in", class: "btn btn-warning" %>
     </div>
+    <% end %>
+  </div>
+</div>
