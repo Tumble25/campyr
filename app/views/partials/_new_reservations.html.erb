@@ -1,12 +1,12 @@
 <div class="dashboard-container">
   <h3 class="text-warning"> Hello, <%=current_user.first_name%> !</h3>&nbsp &nbsp &nbsp
-  <h4>New reservations</h4>
+  <h4>My campsite reservations</h4>
 
   <div class="grid-container">
     <% @newres.each do |reservation| %>
     <div class="card-review-reservation">
       <a data-toggle="modal" data-target="#reservation-modal-<%= reservation.id %>" class="m-0">
-       <img src=<%= cl_image_path Campsite.find(reservation.campsite_id).photo, height: 400, width: 400, crop: :fill %>>
+       <img src=<%= cl_image_path reservation.campsite.photo, height: 400, width: 400, crop: :fill %>>
       </a>
 
       <div class="card-review-reservation-infos p-3">

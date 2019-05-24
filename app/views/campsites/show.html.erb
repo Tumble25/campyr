@@ -1,34 +1,4 @@
-
-<!-- nav bar -->
-<div class="navbar border-bottom">
-  <div>
-    <%= link_to root_path do %>
-    <%= image_tag('logo-camping.png') %>
-    <% end %>
-  </div>
-  <!-- <div class="header-logo">
-    <h1 class="text-align-left">Campyr</h1>
-  </div> -->
-  <nav class="d-flex">
-    <a href="/campsites/new">List your campsite</a>
-    <% if user_signed_in? %>
-    <div class="nav-item active">
-     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navlink"  %>
-     <%= link_to "Dashboard", dashboard_path(@user), class: "navlink"  %>
-   </div>
-   <% else %>
-   <div class="nav-item active d-flex">
-    <a data-toggle="modal" data-target="#ModalSignin" href="">Sign in</a>
-    <%= render "partials/sign_in"%>
-  </div>
-  <div class="nav-item active">
-    <a data-toggle="modal" data-target="#ModalSignup" href="">Sign up</a>
-    <%= render "partials/modal_signup"%>
-  </div>
-  <% end %>
-
-</nav>
-</div>
+<%= render "partials/navbar"%>
 
 <!-- details of campsite and search form-->
  <% if @campsite.user == current_user %>

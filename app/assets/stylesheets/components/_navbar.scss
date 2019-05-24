@@ -8,6 +8,20 @@
   background-color: #fcfcfc;
   padding-right: 35px;
   margin-top: 0;
+  width: 100vw;
+  }
+  .logo-header{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+    font-family: 'Alfa Slab One', cursive;
+    // width: 900px;
+    color: #777576;
+    }
+
   }
 
 a {
@@ -25,14 +39,11 @@ a:hover {
   height: 85px;
 }
 
-// .header-logo h1 {
-//   font-family: 'Alfa Slab One', cursive;
-//   width: 900px;
-//   color: #777576;
-// }
 
-// .dashboard-logo h1 {
-//   font-family: 'Alfa Slab One', cursive;
-//   width: 1050px;
-//   color: #777576;
-// }
+.dashboard-logo h1 {
+  font-family: 'Alfa Slab One', cursive;
+  width: 1050px;
+  color: #777576;
+
+}
+
