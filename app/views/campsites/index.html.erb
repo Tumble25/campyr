@@ -58,7 +58,7 @@
           <div>
             <h2><%= campsite.name %></h2>
           </div>
-          <h2 class="campsite-card-pricing">€<%= campsite.price %></h2>
+          <h2 class="campsite-card-pricing">€<%= campsite.price.to_i %></h2>
         </div>
       </div>
       <% end %>
