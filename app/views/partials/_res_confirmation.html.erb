@@ -13,7 +13,7 @@
           <div class="card-review-reservation-infos p-3">
 
             <h2><strong><%=reservation.campsite.name %></strong></h2>
-            <p><%= reservation.user.first_name %> <%= User.find(reservation.user_id).last_name %></p>
+            <p><%= reservation.user.first_name %> <%= reservation.user.last_name %></p>
 
             <div class="row pl-3">
               <p>Arrival: <%= reservation.arrival %></p>&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp
@@ -23,8 +23,9 @@
             <p>Status of reservation: <%= reservation.status %></p>
           </div>
           <div class="form-row">
-            <button type="button" class="btn btn-primary m-2">Accept</button>
-            <button type="button" class="btn btn-warning m-2">Decline</button>
+
+            <%= link_to "Accept", confirm_reservation_path(reservation), method: :patch, class: "btn btn-primary m-2"%>
+            <%= link_to "Decline", decline_reservation_path(reservation), method: :patch, class: "btn btn-warning m-2"%>
           </div>
         </div>
       </div>

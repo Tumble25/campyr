@@ -75,23 +75,3 @@
   font-size: 15px;
 }
 
-// search bar on index page for campsites
-.search-bar-container {
-  width: 1000px;
-  margin: 40px auto 0px auto;
-  padding: 15px;
-  background-color: #fcfcfc;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 5px;
-  flex-grow: 1;
-  flex-wrap: nowrap;
-  border-radius: 4px;
-  align-items: center;
-  // box-shadow: 0 0 3px rgba(0,0,0,0.1);
-}
-
-.search-bar-container .form-item {
-  margin: 0 5px;
-  height: 40px;
-}
