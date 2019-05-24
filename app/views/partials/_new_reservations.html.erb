@@ -6,7 +6,7 @@
     <% @newres.each do |reservation| %>
     <div class="card-review-reservation">
       <a data-toggle="modal" data-target="#reservation-modal-<%= reservation.id %>" class="m-0">
-       <img src=<%= cl_image_path Campsite.find(reservation.campsite_id).photo, height: 400, width: 400, crop: :fill %>>
+       <img src=<%= cl_image_path reservation.campsite.photo, height: 400, width: 400, crop: :fill %>>
       </a>
 
       <div class="card-review-reservation-infos p-3">
