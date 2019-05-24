@@ -12,23 +12,20 @@
         <div class="container">
           <div class="card-review-reservation-infos p-3">
 
-          <h2><strong><%=reservation.campsite.name %></strong></h2>
-          <p><strong>Client name</strong></p>
-          <p><%= reservation.user.first_name %> <%= User.find(reservation.user_id).last_name %></p>
+            <h2><strong><%=reservation.campsite.name %></strong></h2>
+            <p><%= reservation.user.first_name %> <%= User.find(reservation.user_id).last_name %></p>
 
-          <div class="row pl-3">
-            <p>Arrival: <%= reservation.arrival %></p>&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp
-            <p>Departure: <%= reservation.departure %></p>
+            <div class="row pl-3">
+              <p>Arrival: <%= reservation.arrival %></p>&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp
+              <p>Departure: <%= reservation.departure %></p>
+            </div>
+
+            <p>Status of reservation: <%= reservation.status %></p>
           </div>
-
-          <p>Status of reservation: <%= reservation.status %></p>
-        </div>
-
-        </div>
-      </div>
-
-      <div class="modal-footer">
-        <div class="btn btn-warning form-actions">
+          <div class="form-row">
+            <button type="button" class="btn btn-primary m-2">Accept</button>
+            <button type="button" class="btn btn-warning m-2">Decline</button>
+          </div>
         </div>
       </div>
     </div>

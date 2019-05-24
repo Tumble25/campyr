@@ -4,27 +4,26 @@
 
   <div class="grid-container">
     <% @newres.each do |reservation| %>
-      <div class="card-review-reservation">
-        <a data-toggle="modal" data-target="#reservation-modal-<%= reservation.id %>" href="">
-          <img src='<%= cl_image_path Campsite.find(reservation.campsite_id).photo, height: 300, width: 400, crop: :fill %>'>
-        </a>
+    <div class="card-review-reservation">
+      <a data-toggle="modal" data-target="#reservation-modal-<%= reservation.id %>" class="m-0">
+       <img src=<%= cl_image_path reservation.campsite.photo, height: 400, width: 400, crop: :fill %>>
+      </a>
 
-        <div class="card-review-reservation-infos p-3">
+      <div class="card-review-reservation-infos p-3">
 
-          <h2><strong><%=reservation.campsite.name %></strong></h2>
-          <p><strong>Client name</strong></p>
-          <p><%= reservation.user.first_name %> <%= User.find(reservation.user_id).last_name %></p>
+        <h2><strong><%=reservation.campsite.name %></strong></h2>
+        <p><%= reservation.user.first_name %> <%= User.find(reservation.user_id).last_name %></p>
 
-          <div class="row pl-3">
-            <p>Arrival: <%= reservation.arrival %></p>&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp
-            <p>Departure: <%= reservation.departure %></p>
-          </div>
-
-          <p>Status of reservation: <%= reservation.status %></p>
+        <div class="row pl-3">
+          <p>Arrival: <%= reservation.arrival %></p>&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp
+          <p>Departure: <%= reservation.departure %></p>
         </div>
-      </div>
 
-      <%= render "partials/res_confirmation", reservation: reservation %>
+        <p>Status of reservation: <%= reservation.status %></p>
+      </div>
+    </div>
+
+    <%= render "partials/res_confirmation", reservation: reservation %>
     <% end %>
   </div>
 </div>

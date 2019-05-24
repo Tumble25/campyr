@@ -2,18 +2,18 @@
   <h4>My next trips</h4>
   <div class="grid-container">
     <% @reservations.each do |reservation| %>
-      <div class="card-review-reservation"> <h1></h1>
-        <img src=<%= cl_image_path Campsite.find(reservation.campsite_id).photo, height: 300, width: 400, crop: :fill %>>
-            <div class="card-review-reservation-infos p-3">
-
-        <h2><strong><%=Campsite.find(reservation.campsite_id).name %></strong></h2>
-        <p><strong> Client name</p></strong><p><%= User.find(reservation.user_id).first_name %> <%= User.find(reservation.user_id).last_name %></p>
+    <%= link_to(campsite_path(reservation.campsite)) do %>
+    <div class="card-review-reservation"> <h1></h1>
+      <img src=<%= cl_image_path Campsite.find(reservation.campsite_id).photo, height: 300, width: 400, crop: :fill %>>
+      <div class="card-review-reservation-infos pl-3">
+        <h2 class="pb-2"><strong><%=Campsite.find(reservation.campsite_id).name %></strong></h2>
         <div class="row pl-3">
           <p>Arrival: <%= reservation.arrival %></p>&nbsp &nbsp &nbsp &nbsp&nbsp&nbsp <p>Departure: <%= reservation.departure %></p>
         </div>
-        <p>Status of reservation: <%= reservation.status %> </p>
+        <p>Status: <%= reservation.status %> </p>
       </div>
     </div>
+    <% end %>
     <% end %>
   </div>
 </div>
