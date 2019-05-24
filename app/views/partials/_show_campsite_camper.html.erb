@@ -15,7 +15,13 @@
   </div>
 
 <!-- booking form -->
-  <div class="booking-form border">
+    <div id="totalprice"class="booking-form border">
+    <% if @campsite.user == current_user %>
+    <div class="row justify-content-center pt-3">
+      <div class="col-sm-10">
+        <h2 class="mb-4 text-align-center">This is your campsite</h2>
+      </div>
+      <% else %>
       <div class="row justify-content-center pt-3">
         <div class="col-sm-10">
           <h2 class="mb-4 text-align-center">Book this campsite</h2>
@@ -28,8 +34,8 @@
 
           </div>
           <div class="col-sm-10 form-group">
-            <p><strong>Price per night: <%= @campsite.price %>€</strong></p>
-            <p><strong>Total: 150€</strong></p>
+            <p><strong>Price per night: €<strong id="dayprice"><%= @campsite.price.to_i %></strong></strong></p>
+            <p id= "price"><strong>Total: €<%=@campsite.price.to_i %></strong></p>
           </div>
         </div>
 
@@ -40,7 +46,7 @@
                 <a href="/campsites" class="btn btn-secondary mr-3">Back to Results</a>
 
                 <%= f.button :submit , class: "btn btn-warning"%>
-
+                <% end %>
               </div>
             </div>
           </div>
