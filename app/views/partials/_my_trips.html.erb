@@ -2,6 +2,7 @@
   <h4>My next trips</h4>
   <div class="grid-container">
     <% @reservations.each do |reservation| %>
+    <%= link_to(campsite_path(reservation.campsite)) do %>
     <div class="card-review-reservation"> <h1></h1>
       <img src=<%= cl_image_path Campsite.find(reservation.campsite_id).photo, height: 300, width: 400, crop: :fill %>>
       <div class="card-review-reservation-infos pl-3">
@@ -12,6 +13,7 @@
         <p>Status: <%= reservation.status %> </p>
       </div>
     </div>
+    <% end %>
     <% end %>
   </div>
 </div>
