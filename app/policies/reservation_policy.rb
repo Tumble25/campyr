@@ -8,4 +8,12 @@ class ReservationPolicy < ApplicationPolicy
   def create?
     return true
   end
+
+  def confirm?
+    record.campsite.user == user
+  end
+
+  def decline?
+    record.campsite.user == user
+  end
 end
